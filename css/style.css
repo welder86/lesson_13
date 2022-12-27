@@ -1,0 +1,428 @@
+[class*="__container"] {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Orbitron", sans-serif;
+}
+
+.block {
+    background-color: #6de603ce;
+    padding: 20px;
+}
+
+.block__box {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.block__item {
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.6;
+    background-color: #ffd700;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-align: center;
+    border: 4px solid #0000ff;
+    border-radius: 5px;
+    transition: padding 0.3s linear 1s, letter-spacing 0.3s linear 1.5s, background-color 0.4s ease 1s,
+        border 0.6s ease 1.5s, border-radius 0.4s ease-out 1s;
+}
+
+.block__item:hover {
+    letter-spacing: 5px;
+    padding: 20px 30px;
+    background-color: #0008ff;
+    border: 4px solid #ffd700;
+    border-radius: 15px;
+}
+
+.test-1 {
+    padding: 50px 0;
+}
+
+.test-1__link {
+    position: relative;
+    padding: 10px 40px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0000ff;
+    border-radius: 10px;
+    transition: color 0.5s ease 1s, letter-spacing 0.4s linear 0.5s;
+}
+
+.test-1__link:hover {
+    color: #ffd700;
+    letter-spacing: 4px;
+}
+
+.test-1__link::before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    border-radius: 50%;
+    border: 4px dashed #ffd700;
+    left: 0;
+    background-color: #0008ff;
+    transition: left 0.3s linear;
+}
+
+.test-1__link:hover::before {
+    left: 100%;
+    transform: scale(1.4);
+}
+
+.test-2 {
+    max-width: 900px;
+    padding: 20px;
+    background-color: deeppink;
+}
+
+.test-2__item {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s linear, visibility 0.3s linear, color 0.4s ease;
+}
+
+.test-2:hover .test-2__item {
+    visibility: visible;
+    opacity: 1;
+    color: #30d103;
+}
+
+.menu {
+    padding: 70px 0;
+    background-color: #ffd700;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.menu__item {
+    position: relative;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.7;
+    color: #0000ff;
+    letter-spacing: 2px;
+}
+
+.menu__item::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background-color: #0000ff;
+    transition: width 0.4s linear;
+}
+
+.menu__item:hover::after {
+    width: 100%;
+}
+
+.image {
+    position: relative;
+    width: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    background-color: #000000;
+    z-index: 2;
+    transition: opacity 0.5s linear;
+}
+
+.image:hover::before {
+    opacity: 0;
+}
+
+.image img {
+    width: 100%;
+    transition: transform 0.4s linear;
+}
+
+.image:hover img {
+    transform: scale(1.2);
+}
+
+/* ======= animation ========== */
+
+.animation {
+    padding: 100px 0;
+}
+
+.animation__box {
+    padding: 50px;
+    background-color: #0000ff;
+}
+
+.animation__body {
+    animation-name: translate;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.animation__body:hover {
+    animation-play-state: paused;
+}
+
+@keyframes translate {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(84%);
+    }
+}
+
+.animation__item {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #ffd700;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.animation__item::after {
+    position: absolute;
+    content: "";
+    left: 13%;
+    top: 13%;
+    width: 150px;
+    height: 150px;
+    background-color: #0000ff;
+    animation-name: rotate-after;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.animation__item::before {
+    position: absolute;
+    content: "";
+    left: 26%;
+    top: 26%;
+    width: 100px;
+    height: 100px;
+    background-color: #ffd700;
+    z-index: 2;
+    animation-name: rotate-before;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate-before {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-after {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.nike {
+    background-color: #0000ff;
+    padding: 100px 0;
+}
+
+.nike__box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.item {
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+.nike__item {
+    max-width: 300px;
+    padding: 20px 10px;
+    display: inline-block;
+}
+
+.nike__item:hover .item__content {
+    opacity: 1;
+    transform: translateY(-30%);
+}
+
+.item__img {
+    max-width: 300px;
+    transition: all 0.3s linear;
+}
+
+.item__img:hover {
+    transform: scale(1.5) translate(-15px, -70px) rotate(-20deg);
+}
+
+.item__img img {
+    width: 100%;
+}
+
+.item__content {
+    opacity: 0;
+    color: #ffffff;
+    transition: all 0.3s linear;
+}
+
+.item__title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.item__text {
+    padding: 0 5px;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 2px;
+}
+
+.car {
+    padding: 20px 0;
+    background-color: #ffd700;
+}
+
+.car__body {
+    height: 800px;
+    background-image: url(../images/bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.car__f1 {
+    padding-top: 450px;
+    max-width: 700px;
+    position: relative;
+    animation-name: go;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes go {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.car__f1::before {
+    position: absolute;
+    content: "";
+    left: 125px;
+    bottom: 34px;
+    width: 85px;
+    height: 85px;
+    background-image: url(../images/tires.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.car__f1::after {
+    position: absolute;
+    content: "";
+    right: 86px;
+    bottom: 34px;
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/tires.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.car__f1 img {
+    width: 100%;
+}
+
+.car__tires {
+    max-width: 100px;
+}
+
+.car__tires img {
+    width: 100%;
+    transform: rotate(360deg);
+}
